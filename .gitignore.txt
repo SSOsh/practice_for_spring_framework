@@ -1,0 +1,10 @@
+.idea
+.gradle
+
+gradle/wrapper
+gradle-wrapper.jar
+gradle-wrapper.properties
+build.gradle
+
+gradlew
+gradlew.hat
