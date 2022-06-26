@@ -1,15 +1,15 @@
-.idea
-.idea/
-.gradle
-.gradle/
+// .idea
+// .idea/
+// .gradle
+// .gradle/
 
-gradle/
-gradle/wrapper
-gradle-wrapper.jar
-gradle-wrapper.properties
-build.gradle
+// gradle/
+// gradle/wrapper
+// gradle-wrapper.jar
+// gradle-wrapper.properties
+// build.gradle
 
-gradlew
-gradlew.bat
+// gradlew
+// gradlew.bat
 
-settings.gradle
+// settings.gradle
