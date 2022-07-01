@@ -1,3 +1,4 @@
+
 buildscript {
     ext {
         springBootVersion = '2.1.7.RELEASE'
@@ -9,34 +10,53 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
-
 }
+
+plugins {
+    id 'java'
+}
+
+group 'org.jojoldu.book'
+version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    //spring boot 기본 설정
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.boot:spring-boot-starter-test')
-    //테스트
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    implementation 'junit:junit:4.13.1'
-    //롬복
-    implementation('org.projectlombok:lombok')
-    annotationProcessor('org.projectlombok:lombok')
-    testImplementation('org.projectlombok:lombok')
-    testAnnotationProcessor('org.projectlombok:lombok')
+    //옛날버전
+    //implementation 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.projectlombok:lombok'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
     //spring data jpa
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation('com.h2database:h2')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+
+    //PostsApiControllerTest responseEntity HttpMethod.PUT 문제 해결 위해(해결 못함)
+    //compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+}
+//롬복위한 configurations
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+test {
+    useJUnitPlatform()
 }
