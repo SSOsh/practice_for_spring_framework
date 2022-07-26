@@ -21,6 +21,15 @@ public class IndexControllerTest {
         //when
         String body = this.restTemplate.getForObject("/", String.class);
         //then
-        assertThat(body).contains("스프링부트로 시작하는 웹 서비스");
+        assertThat(body).contains("스프링부트로 시작하는 웹 서비스 Ver.2");
+    }
+
+    @Test
+    public void 추가페이지_로딩() {
+        //when
+        String body = this.restTemplate.getForObject("/posts/save", String.class);
+        //then
+        assertThat(body).contains("제목을 입력하세요");
+        System.out.println("hihihi");
     }
 }

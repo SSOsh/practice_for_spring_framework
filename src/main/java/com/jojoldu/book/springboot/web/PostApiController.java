@@ -1,13 +1,12 @@
-package com.jojoldu.book.springboot.web;
-
-import com.jojoldu.book.springboot.service.post.PostsService;
-import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+//package com.jojoldu.book.springboot.web;
+//
+//import com.jojoldu.book.springboot.service.post.PostsService;
+//import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
+//import lombok.RequiredArgsConstructor;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RestController;
+//
 //@RequiredArgsConstructor
 //@RestController
 //public class PostApiController {
